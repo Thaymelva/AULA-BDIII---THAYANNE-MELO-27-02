@@ -21,6 +21,17 @@ nome_responsavel VARCHAR(500) NOT NULL,
 telefone_responsavel VARCHAR(11) NOT NULL
 );
 
+CREATE TABLE tbl_paciente_bkp(
+cod_paciente INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+nome_paciente VARCHAR(500) NOT NULL,
+telefone_paciente VARCHAR(10),
+celular_paciente VARCHAR(11) NOT NULL,
+email_paciente VARCHAR(100) NOT NULL,
+nome_responsavel VARCHAR(500) NOT NULL,
+telefone_responsavel VARCHAR(11) NOT NULL,
+date_delete datetime 
+);
+
 #CRIAÇÃO DA TABELA MÉDICO
 CREATE TABLE tbl_medico(
 cod_medico INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -55,3 +66,17 @@ cod_paciente INT UNSIGNED NOT NULL,
 data_cirurgia VARCHAR(10) NOT NULL,
 status_cirurgia ENUM('AGENDADO', 'CONCLUÍDO', 'CANCELADO')
 );
+
+CREATE TABLE listagem_medico_especialidade_aula (
+    cod_medico INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome_medico VARCHAR(500) NOT NULL,
+    telefone_medico VARCHAR(10),
+    celular_medico VARCHAR(11) NOT NULL,
+    email_medico VARCHAR(100) NOT NULL,
+    cod_especialidade INT UNSIGNED NOT NULL,
+    nome_especialidade VARCHAR(100) NOT NULL,
+    data_aula DATE NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fim TIME NOT NULL
+);
+
